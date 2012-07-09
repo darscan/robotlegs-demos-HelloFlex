@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<s:Group 
+	xmlns:s="library://ns.adobe.com/flex/spark"
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	height="100%"
+	implements="robotlegs.bender.demos.hello.views.IMessageWriter"
+	>
+
+	<fx:Script>
+		<![CDATA[
+			public function writeMessage(message:String):void
+			{
+				messageLabel.text += message + "\n";
+			}
+		]]>
+	</fx:Script>
+
+	<s:Label 
+		id="messageLabel"
+		width="100%"
+		mouseEnabled="false"
+		/>
+
+</s:Group>
