@@ -7,7 +7,6 @@
 
 package robotlegs.bender.demos.hello.config
 {
-	import flash.display.DisplayObjectContainer;
 	import flash.events.Event;
 	import flash.events.IEventDispatcher;
 	import flash.utils.setTimeout;
@@ -16,6 +15,7 @@ package robotlegs.bender.demos.hello.config
 	import robotlegs.bender.demos.hello.views.IMessageWriter;
 	import robotlegs.bender.demos.hello.views.MessageWriterMediator;
 	import robotlegs.bender.demos.hello.views.MessageWriterView;
+	import robotlegs.bender.extensions.contextView.ContextView;
 	import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
 	import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 	import robotlegs.bender.framework.api.IConfig;
@@ -42,7 +42,7 @@ package robotlegs.bender.demos.hello.config
 		public var dispatcher:IEventDispatcher;
 
 		[Inject]
-		public var contextView:DisplayObjectContainer;
+		public var contextView:ContextView;
 
 		/*============================================================================*/
 		/* Public Functions                                                           */
@@ -71,7 +71,7 @@ package robotlegs.bender.demos.hello.config
 		private function init():void
 		{
 			// add the view that has the mediator mapped to it
-			IVisualElementContainer(contextView)
+			IVisualElementContainer(contextView.view)
 				.addElement(new MessageWriterView());
 
 			// dispatch the event that is bound to the command
