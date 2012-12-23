@@ -60,8 +60,7 @@ package robotlegs.bender.demos.hello.config
 				.map(IMessageWriter)
 				.toMediator(MessageWriterMediator);
 
-			context.lifecycle
-				.afterInitializing(init);
+			context.afterInitializing(init);
 		}
 
 		/*============================================================================*/
